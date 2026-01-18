@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meemon - บัตรมูทำนายดวง</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --gold: #d4af37;
+        --gold-glow: 0 0 15px rgba(212, 175, 55, 0.3);
+      }
+      body {
+        font-family: 'Prompt', sans-serif;
+        background-color: #05020a;
+        background-image: radial-gradient(circle at 50% 0%, #2e1065 0%, #000000 80%);
+        color: #e2e8f0;
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+      .font-cinzel {
+        font-family: 'Cinzel', serif;
+      }
+      
+      /* Star Animation */
+      .star {
+        position: absolute;
+        background: white;
+        border-radius: 50%;
+        opacity: 0;
+        animation: twinkle var(--duration) ease-in-out infinite;
+        animation-delay: var(--delay);
+      }
+      @keyframes twinkle {
+        0% { opacity: 0; transform: scale(0.5); }
+        50% { opacity: var(--opacity); transform: scale(1.2); }
+        100% { opacity: 0; transform: scale(0.5); }
+      }
+
+      /* 3D Card Stuff */
+      .perspective-1000 {
+        perspective: 1000px;
+      }
+      .preserve-3d {
+        transform-style: preserve-3d;
+      }
+      .backface-hidden {
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+      }
+      .rotate-y-180 {
+        transform: rotateY(180deg);
+      }
+      
+      /* Mystic Button Glow */
+      .btn-mystic {
+        background: linear-gradient(180deg, #2d1b4e 0%, #1a0b2e 100%);
+        border: 1px solid rgba(212, 175, 55, 0.4);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+      .btn-mystic:hover {
+        border-color: var(--gold);
+        box-shadow: var(--gold-glow);
+        transform: translateY(-2px);
+      }
+      .btn-mystic::after {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+        opacity: 0;
+        transform: scale(0.5);
+        transition: opacity 0.5s, transform 0.5s;
+      }
+      .btn-mystic:active::after {
+        opacity: 1;
+        transform: scale(1);
+        transition: 0s;
+      }
+
+      /* Stack Card Styles */
+      .stack-container {
+        perspective: 1200px;
+      }
+      .stack-card {
+        transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+        transform-style: preserve-3d;
+      }
+      /* Consecration Animation */
+      @keyframes floatAndFlip {
+        0% { transform: translateY(0) scale(1) rotateY(0); }
+        40% { transform: translateY(-60px) scale(1.1) rotateY(20deg); box-shadow: 0 0 50px var(--gold); }
+        100% { transform: translateY(-30px) scale(1.05) rotateY(180deg); }
+      }
+      .animate-consecrate {
+        animation: floatAndFlip 1.5s forwards cubic-bezier(0.45, 0, 0.55, 1);
+        z-index: 50 !important;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
