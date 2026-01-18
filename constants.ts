@@ -67,6 +67,31 @@ export const ASPECT_OPTIONS: Record<string, AspectOption> = {
     id: 'luck', label: 'โชคลาภ', icon: '🍀', sub: 'Luck', 
     colorClass: 'border-[#facc15]',
     bgPattern: 'radial-gradient(circle at 50% 30%, #ca8a04 0%, #a16207 60%, #713f12 100%)'
+  },
+  success: {
+    id: 'success', label: 'ความสำเร็จ', icon: '🏆', sub: 'Success',
+    colorClass: 'border-[#a855f7]',
+    bgPattern: 'radial-gradient(circle at 50% 30%, #581c87 0%, #3b0764 60%, #1e1b4b 100%)'
+  },
+  protection: {
+    id: 'protection', label: 'แคล้วคลาด', icon: '🛡️', sub: 'Protection',
+    colorClass: 'border-[#94a3b8]',
+    bgPattern: 'radial-gradient(circle at 50% 30%, #475569 0%, #334155 60%, #0f172a 100%)'
+  },
+  prestige: {
+    id: 'prestige', label: 'บารมี', icon: '🎖️', sub: 'Prestige',
+    colorClass: 'border-[#b91c1c]',
+    bgPattern: 'radial-gradient(circle at 50% 30%, #991b1b 0%, #7f1d1d 60%, #450a0a 100%)'
+  },
+  harmony: {
+    id: 'harmony', label: 'ร่มเย็น', icon: '🕊️', sub: 'Harmony',
+    colorClass: 'border-[#22c55e]',
+    bgPattern: 'radial-gradient(circle at 50% 30%, #15803d 0%, #166534 60%, #064e3b 100%)'
+  },
+  beginnings: {
+    id: 'beginnings', label: 'เริ่มต้นใหม่', icon: '🌱', sub: 'Beginnings',
+    colorClass: 'border-[#84cc16]',
+    bgPattern: 'radial-gradient(circle at 50% 30%, #65a30d 0%, #4d7c0f 60%, #365314 100%)'
   }
 };
 
@@ -129,7 +154,12 @@ export const WALLPAPER_DB: WallpaperDB = {
         trade: "https://github.com/taithai-tai/meemon/blob/main/card/Picture/%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B9%84%E0%B8%94%E0%B9%89%E0%B8%97%E0%B8%B8%E0%B8%81%E0%B8%A7%E0%B8%B1%E0%B8%99%E0%B9%80%E0%B8%81%E0%B8%B4%E0%B8%94/S__2908245_0.jpg?raw=true",
         education: "https://github.com/taithai-tai/meemon/blob/main/card/Picture/%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B9%84%E0%B8%94%E0%B9%89%E0%B8%97%E0%B8%B8%E0%B8%81%E0%B8%A7%E0%B8%B1%E0%B8%99%E0%B9%80%E0%B8%81%E0%B8%B4%E0%B8%94/S__2908246_0.jpg?raw=true",
         mercy: "https://github.com/taithai-tai/meemon/blob/main/card/Picture/%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B9%84%E0%B8%94%E0%B9%89%E0%B8%97%E0%B8%B8%E0%B8%81%E0%B8%A7%E0%B8%B1%E0%B8%99%E0%B9%80%E0%B8%81%E0%B8%B4%E0%B8%94/S__2908248.jpg?raw=true",
-        luck: "https://github.com/taithai-tai/meemon/blob/main/card/Picture/%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B9%84%E0%B8%94%E0%B9%89%E0%B8%97%E0%B8%B8%E0%B8%81%E0%B8%A7%E0%B8%B1%E0%B8%99%E0%B9%80%E0%B8%81%E0%B8%B4%E0%B8%94/S__2908251.jpg?raw=true"
+        luck: "https://github.com/taithai-tai/meemon/blob/main/card/Picture/%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B9%84%E0%B8%94%E0%B9%89%E0%B8%97%E0%B8%B8%E0%B8%81%E0%B8%A7%E0%B8%B1%E0%B8%99%E0%B9%80%E0%B8%81%E0%B8%B4%E0%B8%94/S__2908251.jpg?raw=true",
+        success: "https://github.com/taithai-tai/meemon/blob/main/card/Picture/%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B9%84%E0%B8%94%E0%B9%89%E0%B8%97%E0%B8%B8%E0%B8%81%E0%B8%A7%E0%B8%B1%E0%B8%99%E0%B9%80%E0%B8%81%E0%B8%B4%E0%B8%94/S__15785987.jpg?raw=true",
+        protection: "https://github.com/taithai-tai/meemon/blob/main/card/Picture/%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B9%84%E0%B8%94%E0%B9%89%E0%B8%97%E0%B8%B8%E0%B8%81%E0%B8%A7%E0%B8%B1%E0%B8%99%E0%B9%80%E0%B8%81%E0%B8%B4%E0%B8%94/S__15785988.jpg?raw=true",
+        prestige: "https://github.com/taithai-tai/meemon/blob/main/card/Picture/%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B9%84%E0%B8%94%E0%B9%89%E0%B8%97%E0%B8%B8%E0%B8%81%E0%B8%A7%E0%B8%B1%E0%B8%99%E0%B9%80%E0%B8%81%E0%B8%B4%E0%B8%94/S__15785989.jpg?raw=true",
+        harmony: "https://github.com/taithai-tai/meemon/blob/main/card/Picture/%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B9%84%E0%B8%94%E0%B9%89%E0%B8%97%E0%B8%B8%E0%B8%81%E0%B8%A7%E0%B8%B1%E0%B8%99%E0%B9%80%E0%B8%81%E0%B8%B4%E0%B8%94/S__15785990.jpg?raw=true",
+        beginnings: "https://github.com/taithai-tai/meemon/blob/main/card/Picture/%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B9%84%E0%B8%94%E0%B9%89%E0%B8%97%E0%B8%B8%E0%B8%81%E0%B8%A7%E0%B8%B1%E0%B8%99%E0%B9%80%E0%B8%81%E0%B8%B4%E0%B8%94/S__15785992.jpg?raw=true"
     }
 };
 

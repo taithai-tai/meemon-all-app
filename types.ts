@@ -26,7 +26,11 @@ export type AspectKey =
   | 'education' 
   | 'mercy' 
   | 'luck'
-  | 'success';
+  | 'success'
+  | 'protection'
+  | 'prestige'
+  | 'harmony'
+  | 'beginnings';
 
 export interface AspectOption {
   id: AspectKey;
