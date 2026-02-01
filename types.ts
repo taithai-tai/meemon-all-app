@@ -37,8 +37,9 @@ export interface AspectOption {
   label: string;
   icon: string;
   sub: string;
-  colorClass: string; // Used for custom gradients in Tailwind
-  bgPattern?: string; // CSS background pattern
+  colorClass: string;
+  bgPattern?: string;
+  isNew?: boolean;
 }
 
 export interface WallpaperDB {
