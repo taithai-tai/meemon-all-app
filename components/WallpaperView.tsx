@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { ArrowLeft, ChevronLeft, ChevronRight, Sparkles, CheckCircle } from 'lucide-react';
-import { ASPECT_OPTIONS, WALLPAPER_DB } from '../constants';
-import { DayKey } from '../types';
+import { ASPECT_OPTIONS, WALLPAPER_DB } from '../constants.ts';
+import { DayKey } from '../types.ts';
 
 interface WallpaperViewProps {
   onBack: () => void;
@@ -73,16 +73,12 @@ const WallpaperView: React.FC<WallpaperViewProps> = ({ onBack, playSound }) => {
 
   const downloadImage = () => {
     if (!generatedImageUrl) return;
-    const link = document.createElement('a');
-    link.href = generatedImageUrl;
-    link.download = `meemon-${selectedDay}.jpg`;
-    link.target = "_blank";
-    link.click();
+    window.open(generatedImageUrl, '_blank');
   };
 
   if (step === 'day') {
     return (
-      <div className="w-full flex flex-col items-center animate-fade-in">
+      <div className="w-full flex flex-col items-center animate-fade-in px-2">
         <button onClick={() => { playSound('click'); onBack(); }} className="self-start mb-6 flex items-center text-xs text-yellow-500/70 hover:text-yellow-400 uppercase tracking-widest transition-colors"><ArrowLeft className="w-4 h-4 mr-2" /> Back</button>
         <div className="mystic-panel w-full p-6 mb-6 border border-yellow-500/20 bg-black/40 rounded-2xl">
           <label className="block text-center text-sm text-yellow-100/90 uppercase mb-4 font-bold">เลือกวันเกิดของท่าน</label>
@@ -92,7 +88,7 @@ const WallpaperView: React.FC<WallpaperViewProps> = ({ onBack, playSound }) => {
                 <span className="text-2xl drop-shadow-md">{btn.icon}</span>
                 <span className="text-sm font-bold uppercase tracking-wide">{btn.label}</span>
                 {btn.isNew && (
-                  <div className="absolute top-0 right-0 bg-red-600 text-white text-[9px] px-2 py-0.5 rounded-bl-lg font-bold shadow-lg animate-pulse">ใหม่</div>
+                  <div className="absolute top-0 right-0 bg-red-600 text-white text-[9px] px-2 py-0.5 rounded-bl-lg font-bold shadow-lg badge-pulse z-10">ใหม่</div>
                 )}
               </button>
             ))}
@@ -104,12 +100,12 @@ const WallpaperView: React.FC<WallpaperViewProps> = ({ onBack, playSound }) => {
 
   if (step === 'aspect') {
     return (
-      <div className="w-full flex flex-col items-center animate-fade-in relative">
+      <div className="w-full flex flex-col items-center animate-fade-in relative px-2">
         <button onClick={() => setStep('day')} className="self-start mb-6 flex items-center text-xs text-yellow-500/70 hover:text-yellow-400 uppercase transition-colors"><ArrowLeft className="w-3 h-3 mr-1" /> เลือกวันใหม่</button>
         <div className="flex items-center justify-between w-full max-w-xs mb-2 z-20">
-            <button onClick={handlePrevCard} className="p-3 bg-black/40 border border-white/20 rounded-full text-white/80 active:scale-90"><ChevronLeft /></button>
-            <h3 className="text-transparent bg-clip-text bg-gradient-to-b from-yellow-300 to-yellow-600 font-bold text-lg tracking-widest">เลือกความปรารถนา</h3>
-            <button onClick={handleNextCard} className="p-3 bg-black/40 border border-white/20 rounded-full text-white/80 active:scale-90"><ChevronRight /></button>
+            <button onClick={handlePrevCard} className="p-3 bg-black/40 border border-white/20 rounded-full text-white/80 active:scale-90 transition-all"><ChevronLeft className="w-6 h-6" /></button>
+            <h3 className="text-transparent bg-clip-text bg-gradient-to-b from-yellow-300 to-yellow-600 font-bold text-lg tracking-widest text-center">เลือกความปรารถนา</h3>
+            <button onClick={handleNextCard} className="p-3 bg-black/40 border border-white/20 rounded-full text-white/80 active:scale-90 transition-all"><ChevronRight className="w-6 h-6" /></button>
         </div>
         <div className="stack-container relative w-[260px] h-[380px] my-6 z-10">
           {aspects.map((aspect, index) => {
@@ -121,28 +117,35 @@ const WallpaperView: React.FC<WallpaperViewProps> = ({ onBack, playSound }) => {
                  <div key={aspect.id} className={`stack-card absolute w-full h-full rounded-2xl border-2 overflow-hidden shadow-2xl flex flex-col items-center justify-center ${aspect.colorClass} ${offset === 0 && isConsecrating ? 'animate-consecrate' : ''}`} style={{ zIndex, transform, opacity, background: aspect.bgPattern }}>
                     <div className="absolute inset-2 border-2 border-white/20 rounded-xl pointer-events-none"></div>
                     <div className="text-6xl mb-4 drop-shadow-md">{aspect.icon}</div>
-                    <h3 className="font-bold text-2xl text-white tracking-wider drop-shadow-md font-cinzel">{aspect.label}</h3>
+                    <h3 className="font-bold text-2xl text-white tracking-wider drop-shadow-md font-cinzel text-center px-4">{aspect.label}</h3>
                     <p className="text-xs text-white/50 uppercase tracking-[0.3em] font-sans mt-2">{aspect.sub}</p>
+                    
+                    {/* NEW RIBBON FOR NEW ASPECTS */}
                     {aspect.isNew && (
-                      <div className="absolute top-4 right-[-32px] bg-red-600 text-white text-[10px] font-bold px-10 py-1 rotate-45 shadow-lg animate-pulse border-y border-white/20">ใหม่</div>
+                      <div className="new-ribbon badge-pulse">NEW</div>
                     )}
                  </div>
              );
           })}
         </div>
-        <button onClick={handleConsecrate} disabled={isConsecrating} className="mt-2 w-full max-w-xs bg-gradient-to-r from-yellow-700 to-yellow-600 hover:from-yellow-600 hover:to-yellow-500 text-white font-bold py-4 rounded-full shadow-lg transition-all active:scale-95 flex items-center justify-center gap-2 group z-20"><Sparkles className="w-5 h-5 group-hover:rotate-12 transition-transform" /> <span>{isConsecrating ? 'กำลังปลุกเสก...' : 'ปลุกเสกวอลเปเปอร์'}</span></button>
+        <button onClick={handleConsecrate} disabled={isConsecrating} className="mt-2 w-full max-w-xs bg-gradient-to-r from-yellow-700 to-yellow-600 hover:from-yellow-600 hover:to-yellow-500 text-white font-bold py-4 rounded-full shadow-lg transition-all active:scale-95 flex items-center justify-center gap-2 group z-20">
+          <Sparkles className="w-5 h-5 group-hover:rotate-12 transition-transform" />
+          <span>{isConsecrating ? 'กำลังปลุกเสก...' : 'ปลุกเสกวอลเปเปอร์'}</span>
+        </button>
       </div>
     );
   }
 
   return (
-    <div className="w-full flex flex-col items-center animate-fade-in pb-10">
-      <div className={`fixed top-20 left-1/2 -translate-x-1/2 z-50 bg-[#333] text-white px-6 py-4 rounded-xl border border-yellow-500 shadow-2xl flex items-center gap-3 transition-all duration-300 ${showToast ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`}><CheckCircle className="text-green-400" /> ปลุกเสกสำเร็จ!</div>
+    <div className="w-full flex flex-col items-center animate-fade-in pb-10 px-2">
+      <div className={`fixed top-20 left-1/2 -translate-x-1/2 z-50 bg-[#333] text-white px-6 py-4 rounded-xl border border-yellow-500 shadow-2xl flex items-center gap-3 transition-all duration-300 ${showToast ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`}>
+        <CheckCircle className="text-green-400 w-6 h-6" /> ปลุกเสกสำเร็จ!
+      </div>
       <button onClick={() => setStep('aspect')} className="self-start mb-4 flex items-center text-xs text-yellow-500/70 uppercase tracking-widest transition-colors"><ArrowLeft className="w-3 h-3 mr-1" /> เปลี่ยนคำขอ</button>
-      <div className="relative w-2/3 group mb-4 cursor-pointer" onClick={downloadImage}>
+      <div className="relative w-full max-w-[280px] group mb-4 cursor-pointer" onClick={downloadImage}>
           <img src={generatedImageUrl!} className="relative w-full rounded-xl shadow-2xl border border-white/10" alt="Sacred Wallpaper" />
       </div>
-      <p className="text-xs text-yellow-200/80">แตะที่รูปเพื่อดูภาพขนาดเต็มและดาวน์โหลด</p>
+      <p className="text-xs text-yellow-200/80 text-center">แตะที่รูปเพื่อดูภาพขนาดเต็มและดาวน์โหลด</p>
     </div>
   );
 };

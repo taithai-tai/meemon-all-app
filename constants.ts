@@ -52,7 +52,7 @@ export const WALLPAPER_DB: WallpaperDB = {
     tuesday: {
         wealth: "https://github.com/taithai-tai/meemon/blob/main/card/Picture/%E0%B8%AD%E0%B8%B1%E0%B8%87%E0%B8%84%E0%B8%B2%E0%B8%A3/S__2908197_0.jpg?raw=true",
         love: "https://github.com/taithai-tai/meemon/blob/main/card/Picture/%E0%B8%AD%E0%B8%B1%E0%B8%87%E0%B8%84%E0%B8%B2%E0%B8%A3/S__2908198_0.jpg?raw=true",
-        work: "https://github.com/taithai-tai/meemon/blob/main/card/Picture/%E0%B8%AD%E0%B8%B1%E0%B8%87%E0%B8%84%E0%B8%B2%E0%B8%A3/S__2908199_0.jpg?raw=true",
+        work: "https://github.com/taithai-tai/meemon/blob/main/card/Picture/%E0%B8%AD%E0%B1%87%E0%B8%87%E0%B8%84%E0%B8%B2%E0%B8%A3/S__2908199_0.jpg?raw=true",
         health: "https://github.com/taithai-tai/meemon/blob/main/card/Picture/%E0%B8%AD%E0%B8%B1%E0%B8%87%E0%B8%84%E0%B8%B2%E0%B8%A3/S__2908200_0.jpg?raw=true"
     },
     wednesday_day: {
@@ -62,7 +62,7 @@ export const WALLPAPER_DB: WallpaperDB = {
         health: "https://github.com/taithai-tai/meemon/blob/main/card/Picture/%E0%B8%9E%E0%B8%B8%E0%B8%97%E0%B8%81%E0%B8%A5%E0%B8%B2%E0%B8%A7%E0%B8%A7%E0%B8%B1%E0%B8%99/S__2908206_0.jpg?raw=true"
     },
     wednesday_night: {
-        wealth: "https://github.com/taithai-tai/meemon/blob/main/card/Picture/%E0%B8%9E%E0%B8%B8%E0%B8%97%E0%B8%81%E0%B8%A5%E0%B8%B2%E0%B8%87%E0%B8%84%E0%B8%B7%E0%B8%99/S__2908209_0.jpg?raw=true",
+        wealth: "https://github.com/taithai-tai/meemon/blob/main/card/Picture/%E0%B8%9E%E0%B8%B8%E0%B8%97%E0%B8%81%E0%B8%A5%E0%B8%B2%E0%B8%84%E0%B8%B7%E0%B8%99/S__2908209_0.jpg?raw=true",
         love: "https://github.com/taithai-tai/meemon/blob/main/card/Picture/%E0%B8%9E%E0%B8%B8%E0%B8%97%E0%B8%81%E0%B8%A5%E0%B8%B2%E0%B8%A7%E0%B8%A7%E0%B8%B1%E0%B8%99/S__2908210_0.jpg?raw=true",
         work: "https://github.com/taithai-tai/meemon/blob/main/card/Picture/%E0%B8%9E%E0%B8%B8%E0%B8%97%E0%B8%81%E0%B8%A5%E0%B8%B2%E0%B8%A7%E0%B8%A7%E0%B8%B1%E0%B8%99/S__2908211_0.jpg?raw=true",
         health: "https://github.com/taithai-tai/meemon/blob/main/card/Picture/%E0%B8%9E%E0%B8%B8%E0%B8%97%E0%B8%81%E0%B8%A5%E0%B8%B2%E0%B8%A7%E0%B8%A7%E0%B8%B1%E0%B8%99/S__2908212_0.jpg?raw=true"
